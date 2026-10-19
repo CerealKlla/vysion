@@ -1,0 +1,37 @@
+license="${mod_license}"
+
+[[mods]] #mandatory
+
+modId="${mod_id}" #mandatory
+
+version="${mod_version}" #mandatory
+
+displayName="${mod_name}" #mandatory
+
+description='''
+NeoForge add-on for Vivecraft: a per-player hybrid VR input mode. Keeps Vivecraft's headset
+rendering and head tracking active while suppressing its motion-controller-driven movement/
+interaction and using keyboard+mouse as primary input instead -- the headset only ever rotates
+head/camera look, mouse/keyboard controls torso facing and interactions.
+'''
+
+[[dependencies.${mod_id}]] #optional
+    modId="neoforge" #mandatory
+    type="required" #mandatory
+    versionRange="[${neo_version},)" #mandatory
+    ordering="NONE"
+    side="CLIENT"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="CLIENT"
+
+[[dependencies.${mod_id}]]
+    modId="vivecraft"
+    type="required"
+    versionRange=""
+    ordering="AFTER"
+    side="CLIENT"
